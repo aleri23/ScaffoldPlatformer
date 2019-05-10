@@ -19,13 +19,21 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+     void Update()
     {
-        horizontalMove = Input.GetAxisRaw("Horizontal") * runSpeed;
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetMouseButton(0))
         {
-            jump = true;
+            horizontalMove = ((Input.mousePosition[0] - (Screen.width / 2)) / Screen.width) * 4 * runSpeed;
+            if ((Input.mousePosition[1]) > 2 * Screen.height / 3)
+            {
+                jump = true;
+            }
         }
+        else
+        {
+            horizontalMove = 0;
+        }
+
     }
 
     // FixedUpdate is called multiple times per x amount of frames
