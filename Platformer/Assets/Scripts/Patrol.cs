@@ -46,4 +46,6 @@ public class Patrol : MonoBehaviour {
             localScale.x = -1;
         patrollingGameObject.transform.localScale = localScale;
     }
+ 
+  
 }
